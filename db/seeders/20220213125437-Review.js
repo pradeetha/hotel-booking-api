@@ -15,12 +15,12 @@ module.exports = {
     const bookings = await queryInterface.sequelize.query(
       `SELECT id from hotel_database_development.Bookings;`
     );
-    const ratings = await queryInterface.query(
+    const ratings = await queryInterface.sequelize.query(
       `SELECT id from hotel_database_development.HotelRatings;`
     )
     const hotelRows = hotels[0];
     const userRows = users[0];
-    const hotelRatingRows = HotelRatings[0];
+    const hotelRatingRows = ratings[0];
 
 
       await queryInterface.bulkInsert('Reviews', [
